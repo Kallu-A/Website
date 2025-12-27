@@ -7,23 +7,21 @@ import ThemeToggle from "./components/ThemeToggle";
 
 interface LocaleLayoutProps {
   children: ReactNode;
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
 
 export default async function LocaleLayout({
   children,
   params,
 }: LocaleLayoutProps) {
-  // react use for locale param
-  var param = await params;
-
-  const messages = (await import(`../../res/${param.locale}.json`)).default;
+  const { locale } = await params;
+  const messages = (await import(`../../res/${locale}.json`)).default;
 
   // Return wrapped children
   return (
-    <NextIntlClientProvider locale={param.locale} messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <div className="toggleContainer">
         <LanguageToggle />
         <ThemeToggle />

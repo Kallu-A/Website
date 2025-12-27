@@ -1,11 +1,12 @@
 import { getRequestConfig } from "next-intl/server";
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  // Await the locale provided by generateStaticParams
   const locale = await requestLocale;
 
+  const finalLocale = locale || "en";
+
   return {
-    locale,
-    messages: (await import(`../res/${locale}.json`)).default,
+    locale: finalLocale,
+    messages: (await import(`../res/${finalLocale}.json`)).default,
   };
 });
