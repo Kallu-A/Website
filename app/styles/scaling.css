@@ -1,0 +1,8 @@
+@media (max-width: 640px) {
+  .theme-toggle,
+  .lang-toggle {
+    transform: scale(0.9);
+  }
+}
+
+
