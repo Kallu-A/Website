@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
 
-import "./styles/globals.css";
 import "./styles/theme.css";
 import "./styles/background.css";
 import "./styles/scaling.css";
+import "./styles/darkToggle.css";
+import "./styles/langToggle.css";
 
 export const metadata: Metadata = {
-  title: "Kallu Website",
-  description: "Personal website of Kallu",
+  title: "Kallu",
+  description: "",
 };
-
-import LanguageToggle from "./components/LanguageToggle";
-import ThemeToggle from "./components/ThemeToggle";
 
 export default function RootLayout({
   children,
@@ -19,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning className="background">
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -36,13 +34,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="background">
-        <div className="toggleContainer">
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

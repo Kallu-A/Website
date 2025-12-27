@@ -7,7 +7,13 @@
 
 .dark {
   --bg-paper: #121212;
-  --bg-paper-light: #2c2c2c;
+  --bg-paper-light: #181818;
   --foreground: #ededed;
   --cloud: #6b3a5c;
+}
+
+html {
+  background: var(--bg-paper);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }

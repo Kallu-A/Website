@@ -1,11 +1,15 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/Website' : '',
+
+  basePath: process.env.NODE_ENV === "production" ? "/Website" : "",
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

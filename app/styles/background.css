@@ -13,10 +13,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/noise.png");
-  opacity: 0.4;
   pointer-events: none;
-  mix-blend-mode: multiply;
+  background-image: radial-gradient(
+    circle,
+    var(--foreground) 1px,
+    transparent 1px
+  );
+  opacity: 0.08;
+  background-size: 4px 4px;
 }
 
 .toggleContainer {

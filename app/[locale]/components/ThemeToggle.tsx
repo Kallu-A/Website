@@ -1,6 +1,5 @@
 "use client";
 
-import "../styles/darkToggle.css";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
