@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  basePath: process.env.NODE_ENV === "production" ? "/Website" : "",
+  basePath: process.env.NODE_ENV === "production" ? "" : "",
 };
 
 export default withNextIntl(nextConfig);
