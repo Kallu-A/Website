@@ -6,8 +6,8 @@
 }
 
 .dark {
-  --bg-paper: #121212;
-  --bg-paper-light: #181818;
+  --bg-paper: #222222;
+  --bg-paper-light: #383838;
   --foreground: #ededed;
   --cloud: #6b3a5c;
 }

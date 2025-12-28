@@ -1,6 +1,33 @@
 {
-  "HomePage": {
-    "welcome": "Welcome to Kallu's Website",
-    "description": "Personal website of Kallu"
+  "education": {
+    "name": "Education",
+    "iutDegree": "DUT Informatique",
+    "engineer": "Telecom Nancy",
+    "canada": "Université de Sherbrooke"
+  },
+  "workXp": {
+    "name": "Work Experience",
+    "nameBluepad": "Web Developer Intern",
+    "companyBluepad": "BluePad",
+    "durationBluepad": "April 2022 - June 2022",
+    "nameAbso": "Web Developer",
+    "companyAbso": "Absoludique",
+    "durationAbso": "February 2023 - February 2024",
+    "nameInria": "3D Research Internship",
+    "companyInria": "Inria",
+    "durationInria": "June 2024 - July 2024",
+    "nameLuccaStage": "Software Engineer / AI Intern",
+    "companyLuccaStage": "Lucca",
+    "durationLuccaStage": "May 2025 - September 2025",
+    "nameLucca": "Software Engineer",
+    "companyLucca": "Lucca",
+    "durationLucca": "September 2025 - Present"
+  },
+  "lang": {
+    "name": "Languages",
+    "english": "C1 - English",
+    "french": "C2 - French",
+    "spanish": "A2 - Spanish",
+    "indonesian": "A1 - Indonesian"
   }
 }

@@ -1,0 +1,195 @@
+.library-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.sign-ropes {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 50px;
+}
+
+.rope {
+  width: 2px;
+  background: #333;
+  height: 100%;
+  position: relative;
+}
+
+.rope::before,
+.rope::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  left: -5px;
+}
+
+.rope::before {
+  top: -5px;
+}
+
+.rope::after {
+  bottom: -4px;
+  background: #4a2f1a;
+}
+
+.sign-board {
+  background: #4a2f1a;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(0, 0, 0, 0.05) 40px,
+    rgba(0, 0, 0, 0.05) 80px
+  );
+  color: #f0e6d2;
+  padding: 12px 30px;
+  border: 3px solid #3d2615;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  animation: swing 3.5s ease-in-out infinite;
+  transform-origin: top center;
+  border-bottom: 6px solid #2d1a0e;
+}
+
+.shelf {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 0 15px;
+  border-bottom: 12px solid #4a2f1a;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.book-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 200px;
+  cursor: pointer;
+}
+
+.book {
+  width: 45px;
+  border-radius: 2px 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* On change justify-content pour centrer tout le contenu verticalement */
+  justify-content: center;
+  padding-bottom: 10px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.2), 3px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Les petites lignes de dorure en haut et en bas de la tranche */
+.book-spine-detail {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+.book::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.book-icon-wrapper {
+  position: absolute;
+  top: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.book-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 4;
+}
+
+.book-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-top: 45px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  height: 60%;
+}
+
+.book-container:hover .book {
+  transform: translateY(-30px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.book-shadow {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.book-container:hover .book-shadow {
+  opacity: 1;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotateX(5deg) rotateZ(-1deg);
+  }
+  50% {
+    transform: rotateX(15deg) rotateZ(1deg);
+  }
+  100% {
+    transform: rotateX(5deg) rotateZ(-1deg);
+  }
+}

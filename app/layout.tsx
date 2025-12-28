@@ -5,10 +5,14 @@ import "./styles/background.css";
 import "./styles/scaling.css";
 import "./styles/darkToggle.css";
 import "./styles/langToggle.css";
+import "./styles/library.css";
 
 export const metadata: Metadata = {
   title: "Kallu",
   description: "",
+  icons: {
+    icon: "/Website/favicon.ico",
+  },
 };
 
 export default function RootLayout({
