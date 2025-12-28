@@ -11,7 +11,7 @@ export default function RootPage() {
     const preferredLanguage = window.navigator.language.startsWith("fr")
       ? "fr"
       : "en";
-    router.replace(`/${preferredLanguage}`);
+    router.replace(`/Website/${preferredLanguage}`);
   }, [router]);
 
   return (
