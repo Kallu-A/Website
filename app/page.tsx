@@ -12,7 +12,7 @@ export default function RootPage() {
       ? "fr"
       : "en";
     router.replace(
-      (process.env.NODE_ENV === "production" ? "/Website" : "") +
+      (process.env.NODE_ENV === "production" ? "/Website/" : "") +
         `${preferredLanguage}`
     );
   }, [router]);
